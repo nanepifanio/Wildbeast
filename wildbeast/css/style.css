@@ -1,0 +1,390 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400;0,700;1,400&display=swap');
+
+/********* Estilos Gerais ***********/
+
+body, p, h1, ul, li, blockquote {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+body {
+    font-family: 'Vollkorn', Georgia, serif;
+    background-color: #fafbfd;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/********* Estrutura Geral ***********/
+
+.estrutura {
+    display: grid;
+    grid-template-columns: minmax(10rem, 1fr) 3fr 18.75rem;
+    grid-template-areas:
+        "header header header"
+        "sidenav main anuncios"
+        "footer footer footer"
+    ;
+}
+
+.header {
+    grid-area: header;
+}
+
+.sidenav {
+    grid-area: sidenav;
+}
+
+.main {
+    grid-area: main;
+}
+
+.anuncios {
+    grid-area: anuncios;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/********* Header ***********/
+
+.header {
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    padding: 1.875rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.logo {
+    max-width: 12.5rem;
+}
+
+.header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header nav a {
+    display: block;
+    padding: .625rem;
+    color: #ffffff;
+    font-size: 1.125rem;
+    background-color: #0000001c;
+    border-radius: .375rem;
+    transition: 0.3s ease-out;
+} 
+
+.header li + li {
+    margin-left: 1.875rem;
+}
+
+.header nav a:hover {
+    background: #0000007a;
+}
+
+/********* Sidenav ***********/
+
+.sidenav {
+    padding: 1.875rem;
+}
+.sidenav ul a {
+    display: block;
+    min-width: 3.75rem;
+    max-width: 6.25rem;
+    padding: 1.25rem;
+    background-color: #ffffff;
+    border-radius: .375rem;
+    box-shadow: .3125rem .3125rem .9375rem #00000023;
+    transition: 0.3s ease-out;
+    margin: 0 auto;
+}
+
+.sidenav li + li {
+    margin-top: 1.875rem;
+}
+
+
+.sidenav ul a:hover {
+    background-color: #b07dfb;
+}
+
+/********* Main ***********/
+
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #ffffff;
+    padding: 1.875rem;
+    gap: 1.875rem;
+    margin: 0 auto;
+}
+
+.titulo {
+    color: #b07dfb;
+}
+
+.titulo h1{
+    font-size: 3.75rem;
+    line-height: 3.75rem;
+}
+
+.titulo span {
+    font-size: .875rem;
+    font-style: italic;
+}
+
+.caracteristicas {
+    display: flex;
+    color: #b07dfb;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.caracteristicas div + div {
+    margin-left: 30px;
+}
+
+.caracteristicas div {
+    border-radius: .375rem;
+    box-shadow: .3125rem .3125rem .9375rem #00000034;
+    background-color: #ffffff;
+}
+
+.caracteristicas span {
+    display: block;
+}
+
+.numero {
+    font-size: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    padding: .625rem 1.0625rem;
+    background: linear-gradient(120deg, #8844ee, #b07dfb);
+    border-top-left-radius: .375rem;
+    border-top-right-radius: .375rem;
+}
+
+.rotulo {
+    font-size: 1rem;
+    line-height: .83125rem;
+    text-align: center;
+    padding: .625rem;
+}
+
+.main p {
+    font-size: 1.1875rem;
+    line-height: 1.5;
+    color: #636364;
+}
+
+.main p:nth-child(3) {
+    grid-column: 1 / -1;
+}
+
+.main img:nth-child(4) {
+    grid-row: span 2;
+}
+
+.main p:nth-child(5) {
+    color: #b07dfb;
+    font-size: .875rem;
+    max-width: 14.375rem;
+    align-self: start;
+}
+
+.main img:nth-child(6) {
+    align-self: end;
+}
+
+.main blockquote {
+    grid-column: 1 / -1;
+    color: #ffffff;
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    font-size: 1.5rem;
+    text-align: center;
+    font-style: italic;
+    padding: 1.875rem;
+    border-radius: .375rem;
+    box-shadow: .3125rem .3125rem .9375rem #00000034;
+}
+
+.atributos {
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    border-radius: .375rem;
+    box-shadow: .3125rem .3125rem .9375rem #00000034;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.125rem;
+    padding: 1.875rem;
+    align-self: start;
+}
+
+.atributos li {
+    padding: .9375rem;
+}
+
+.atributos li + li {
+    border-top: .125rem solid #ffffff36;
+}
+
+.informacoes {
+    align-self: start;
+}
+
+.informacoes p + p {
+    margin-top: 30px;
+}
+
+.main img:last-child {
+    grid-column: 1 / -1;
+}
+
+/********* Anúncios ***********/
+
+.anuncios {
+    padding: 1.875rem;
+}
+
+.anuncios div + div {
+    margin-top: 1.875rem;
+}
+
+/********* Footer ***********/
+
+.footer {
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.1875rem;
+    padding: 1.875rem;
+}
+
+/************************************* Responsivo ***************************************/
+
+@media (max-width: 75rem) {
+    .estrutura {
+        grid-template-columns: 1fr 4fr;
+        grid-template-areas:
+            "header     header"
+            "sidenav    main"
+            "sidenav    anuncios"
+            "footer     footer"
+        ;
+    }
+
+    .anuncios {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.875rem;
+    }
+
+    .anuncios div + div {
+        margin-top: 0;
+    }
+    
+}
+
+
+/********* Tablet ***********/
+
+@keyframes seta {
+    from {
+        right: 1.875rem;
+    }
+    to {
+        right: 1.25rem;
+    }
+}
+
+@media (max-width: 48rem) {
+    .estrutura {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "sidenav"    
+            "main"
+            "anuncios"
+            "footer"
+        ;
+    }
+
+    .header {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        margin-bottom: 1.875rem;
+        width: 100%;
+    }
+
+    .logo, .header nav {
+        justify-self: center;
+    }
+
+    .header li + li {
+        margin-left: .625rem;
+    }
+
+    .sidenav { 
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .sidenav::after {
+        content: "→";
+        color: #afafb4;
+        position: absolute;
+        top: 0;
+        right: 0;
+        animation: seta .5s ease-in 0s infinite alternate;
+    }
+
+    .sidenav ul {
+        display: flex;
+    }
+
+    .sidenav ul li {
+        flex: 1 0 3.75rem;
+    }
+
+    .sidenav li + li {
+        margin-top: 0;
+        margin-left: 1.875rem;
+    }
+}
+
+/********* Smartphone ***********/
+
+@media (max-width: 37.5rem) {
+    .main {
+        grid-template-columns: auto;
+    }
+
+    .titulo {
+        text-align: center;
+    }
+
+    .caracteristicas {
+        justify-content: center;
+    }
+
+    .anuncios {
+        grid-template-columns: auto;
+    }
+}
